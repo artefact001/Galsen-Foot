@@ -61,7 +61,7 @@ export const routes: Routes = [
 
   // { path: 'matches', component: MatcheListComponent },
   // { path: 'tirage', component: TiragesListComponent },
-  
+
   { path: 'tirages', component: TirageslistComponent },
   // { path: 'tirages', component: TiragesListComponent },
   { path: 'tirages/lancer', component: TirageslistComponent  },
