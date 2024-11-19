@@ -24,9 +24,9 @@ import { CompetitionsListComponent } from './Component/Competition/competition-l
 import { CompetitionFormComponent } from './Component/Competition/competition-form/competition-form.component'
 import { CompetitionDetailsComponent } from './Component/Competition/competition-details/competition-details.component'
 import { ZoneEquipeComponent } from './Component/zone-equipe-component/zone-equipe-component.component'
-import { TirageslistComponent } from './Component/tirage/tirages-list.component/tirages-list.component'
 import { ZoneGuard } from './Guard/zone-guard.guard'
 import { AdminGuard } from './Guard/admin-guard.guard'
+import { TirageslistComponent } from './Component/tirage/tirages-list.component/tirages-list.component'
 // import { CompetitionDetailsComponent } from './Component/Competition/competition-details/competition-details.component'
 // import { MatcheListComponent } from './components/matche-list/matche-list.component'
 
@@ -39,9 +39,9 @@ export const routes: Routes = [
   // { path: 'login', component: LoginComponent },
   { path: 'connexion', component: ConnexionComponent },
   { path: 'ajout/zone', component: InscriptionZoneComponent  },
-  { path: 'ajout/equipe', component: InscriptionEquipeComponent  },
+  { path: 'ajout/equipe', component: InscriptionEquipeComponent  } ,
   { path: 'galeries', component: GalerieComponent },
-  { path: 'admin-dashboard', component: AdminDashboardComponent  },
+  { path: 'admin-dashboard', component: AdminDashboardComponent },
   // { path: 'zones', component: ZoneDashboardComponent },
   { path: 'equipe-dashboard', component: EquipeDashboardComponent },
   { path: 'users', component: UserManagementComponent },
@@ -50,21 +50,21 @@ export const routes: Routes = [
 
    { path: 'articles', component: ArticleListComponent },
   { path: 'articles/create', component: ArticleFormComponent },
-  { path: 'articles/:id', component: ArticleDetailsComponent },
+  { path: 'articles/:id', component: ArticleDetailsComponent  },
   { path: 'articles/edit/:id', component: ArticleFormComponent },
 
 
    { path: 'zones', component: ZonesListComponent },  // Route to list all zones
 
 
-  {path: 'zones/:id', component: ZoneDetailsComponent},  // Route to view zone details
+  {path: 'zones/:id', component: ZoneDetailsComponent },  // Route to view zone details
 
   // { path: 'matches', component: MatcheListComponent },
   // { path: 'tirage', component: TiragesListComponent },
-  
+
   { path: 'tirages', component: TirageslistComponent },
   // { path: 'tirages', component: TiragesListComponent },
-  { path: 'tirages/lancer', component: TirageslistComponent },
+  { path: 'tirages/lancer', component: TirageslistComponent  },
   { path: '', redirectTo: '/acceuil', pathMatch: 'full' },
   { path: 'acceuil', component: AcceuilComponent }, // Ensure this path and component are correct
   { path: 'competitions',component: CompetitionsListComponent  },
