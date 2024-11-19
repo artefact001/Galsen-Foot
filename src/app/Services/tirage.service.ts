@@ -65,6 +65,7 @@ export class TirageService {
   }
   
   
+  
   // // Obtenir les en-têtes pour les requêtes HTTP
   // private getHeaders (): HttpHeaders {
   //   const token = localStorage.getItem('access_token')
