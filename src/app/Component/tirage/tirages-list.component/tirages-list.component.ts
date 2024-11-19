@@ -133,6 +133,9 @@ export class TirageslistComponent implements OnInit {
   tirages: Tirage[] = [];
   competitions: Competition[] = []; // Liste des compétitions
   equipes: CompetitionEquipe[] = []; // Liste des équipes participant à la compétition sélectionnée
+  loading: boolean = false; // Indique si les données sont en cours de chargement
+  error: string | null = null; // Stocker les messages d'erreur
+
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.tirageForm = this.fb.group({
@@ -142,9 +145,26 @@ export class TirageslistComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+ 
 
-  lancerTirage(): void {
+  ngOnInit(): void {
+    this.initForm();
+    this.fetchTirages();
+
+  }
+
+  // Initialisation du formulaire
+  initForm(): void {
+    this.tirageForm = this.fb.group({
+      phase: ['', Validators.required],
+      competition_id: [null, Validators.required],
+      zone_id: [null, Validators.required],
+      nombre_poules: [null, [Validators.required, Validators.min(1)]],
+    });
+  }
+
+  // Soumission du formulaire
+  onSubmit(): void {
     if (this.tirageForm.invalid) {
       this.tirageForm.markAllAsTouched();
       return;
@@ -152,19 +172,34 @@ export class TirageslistComponent implements OnInit {
 
     const formData = this.tirageForm.value;
 
-    this.http
-      .post('/http://127.0.0.1:8000/api/tirages/lancer', formData)
-      .pipe(
-        catchError((error) => {
-          console.error('Erreur lors du tirage:', error);
-          return of([]);
-        })
-      )
-      .subscribe((result: any) => {
-        this.poules = JSON.parse(result.poul); // Parse the JSON poules received from API
-      });
+    // Appel API pour lancer le tirage
+    this.http.post('http://127.0.0.1:8000/api/tirages/lancer', formData).subscribe({
+      next: (response: any) => {
+        this.poules = response.poules || []; // Assurez-vous que "poules" est une clé correcte dans la réponse
+      },
+      error: (err) => {
+        console.error('Erreur lors du tirage :', err);
+        alert('Une erreur est survenue lors du tirage.');
+      }
+    });
   }
-  
+
+
+  // Récupération des tirages depuis l'API
+  fetchTirages(): void {
+    this.loading = true;
+    this.http.get('http://127.0.0.1:8000/api/tirages').subscribe({
+      next: (data: any) => {
+        this.tirages = data; // Supposons que l'API retourne un tableau de tirages
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error('Erreur lors du chargement des tirages :', err);
+        this.error = "Impossible de charger les tirages. Veuillez réessayer.";
+        this.loading = false;
+      }
+    });
+  }
   
   // Charger les tirages
   loadTirages(): void {

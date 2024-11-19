@@ -42,58 +42,63 @@
       <h1 class="text-center mb-4">Tirage au Sort</h1>
 
       <!-- Formulaire de lancement de tirage -->
-      <form [formGroup]="tirageForm" (ngSubmit)="lancerTirage()" class="mb-5">
-        <div class="row">
-          <div class="col-md-4">
-            <label for="zone_id" class="form-label">Zone</label>
-            
-            <!-- <select name="" id=""> -->
-            <input
-              type="enum"
-              id="zone_id"
-              formControlName="zone_id"
-              class="form-control"
-              placeholder="ID de la Zone"
-            />
-            <!-- </select> -->
-            <div *ngIf="tirageForm.get('zone_id')?.invalid && tirageForm.get('zone_id')?.touched" class="text-danger">
-              La zone est requise.
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <label for="nombre_poules" class="form-label">Nombre de Poules</label>
-            <input
-              type="number"
-              id="nombre_poules"
-              formControlName="nombre_poules"
-              class="form-control"
-              placeholder="Nombre de Poules"
-            />
-            <div *ngIf="tirageForm.get('nombre_poules')?.invalid && tirageForm.get('nombre_poules')?.touched" class="text-danger">
-              Veuillez indiquer un nombre valide.
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <label for="phase" class="form-label">Phase</label>
-            <select id="phase" formControlName="phase" class="form-select">
-              <option value="">Choisir une phase</option>
-              <option value="Phase de groupes">Phase de groupes</option>
-              <!-- <option value="Quarts de finale">Quarts de finale</option>
-              <option value="Demi-finales">Demi-finales</option>
-              <option value="Finale">Finale</option> -->
-            </select>
-            <div *ngIf="tirageForm.get('phase')?.invalid && tirageForm.get('phase')?.touched" class="text-danger">
-              La phase est requise.
-            </div>
+      <form [formGroup]="tirageForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="phase">Phase :</label>
+          <input id="phase" formControlName="phase" type="text" />
+          <div *ngIf="tirageForm.get('phase')?.invalid && tirageForm.get('phase')?.touched" class="text-danger">
+            La phase est obligatoire.
           </div>
         </div>
-        <button type="submit" class="btn btn-primary mt-4" [disabled]="tirageForm.invalid">
-          Lancer le Tirage
-        </button>
+    
+        <div>
+          <label for="competition_id">ID de la compétition :</label>
+          <input id="competition_id" formControlName="competition_id" type="number" />
+          <div *ngIf="tirageForm.get('competition_id')?.invalid && tirageForm.get('competition_id')?.touched" class="text-danger">
+            L'ID de la compétition est obligatoire.
+          </div>
+        </div>
+    
+        <div>
+          <label for="zone_id">ID de la zone :</label>
+          <input id="zone_id" formControlName="zone_id" type="number" />
+          <div *ngIf="tirageForm.get('zone_id')?.invalid && tirageForm.get('zone_id')?.touched" class="text-danger">
+            L'ID de la zone est obligatoire.
+          </div>
+        </div>
+    
+        <div>
+          <label for="nombre_poules">Nombre de poules :</label>
+          <input id="nombre_poules" formControlName="nombre_poules" type="number" />
+          <div *ngIf="tirageForm.get('nombre_poules')?.invalid && tirageForm.get('nombre_poules')?.touched" class="text-danger">
+            Le nombre de poules doit être supérieur à 0.
+          </div>
+        </div>
+    
+        <button type="submit"  class="btn btn-primary mt-3">Lancer le Tirage</button>
       </form>
-
+      <div class="tirage-list-container">
+        <h2>Liste des Tirages</h2>
+      
+        <!-- Chargement en cours -->
+        <div *ngIf="loading" class="loading">Chargement des tirages...</div>
+      
+        <!-- Message d'erreur -->
+        <div *ngIf="error" class="error-message">{{ error }}</div>
+      
+        <!-- Liste des tirages -->
+        <div *ngIf="tirages.length > 0">
+          <div *ngFor="let tirage of tirages" class="tirage-card">
+            <h3>{{ tirage.phase }}</h3>
+            <p><strong>ID de la compétition :</strong> {{ tirage.competition_id }}</p>
+            <!-- <p><strong>ID de la zone :</strong> {{ tirage.zone_id }}</p> -->
+            <p><strong>Nombre de poules :</strong> {{ tirage.nombre_poules }}</p>
+          </div>
+        </div>
+      
+        <!-- Message si aucun tirage -->
+        <div *ngIf="!loading && tirages.length === 0">Aucun tirage disponible pour le moment.</div>
+      </div>
       <!-- Affichage des poules -->
       <div *ngIf="poules.length > 0">
         <h2 class="text-center">Résultats du Tirage</h2>
