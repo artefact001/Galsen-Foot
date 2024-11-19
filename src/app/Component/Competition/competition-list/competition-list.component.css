@@ -7,6 +7,13 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  border: solid 1px #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  
 
 
 }
@@ -72,10 +79,11 @@
 }
 .competition-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); /* Fixe 3 colonnes */
+  gap: 20px; /* Espacement entre les cartes */
   justify-content: center;
 }
+
 
 .pagination {
   display: flex;

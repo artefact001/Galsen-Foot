@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from '../../Services/auth.service';
 import { UserModel } from '../Models/user.model';
+// import { UserModel } from '../Models/user.model';
 // import { UserModel } from '../../../../Models/users.model';
 // import { AuthService } from '../../../../Services/auth.service';
 // import { Role } from '../../../../Models/roles.model';
@@ -56,11 +57,15 @@ export class ConnexionComponent {
             else {
               this.router.navigateByUrl('dashboard');
             }
+            
           }
+           dd(response);
         },
         (error) => {
+      
           console.error(error);
         }
+         
       );
     }
   }
@@ -94,3 +99,7 @@ export class ConnexionComponent {
 
 }
 }
+function dd($data: any) {
+  throw new Error('Function not implemented.');
+}
+
