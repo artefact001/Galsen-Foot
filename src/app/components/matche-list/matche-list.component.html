@@ -1,0 +1,19 @@
+<!--
+
+<div *ngFor="let match of matches">
+      <h3>{{ match.equipe1_nom }} vs {{ match.equipe2_nom }}</h3>
+      <p>Date : {{ match.date_matche }}</p>
+      <p>Statut : {{ match.statut }}</p>
+      <p>Buteurs : {{ match.buteurs?.map(b => b.nom).join(', ') || 'Aucun' }}</p>
+      <p>Passeurs : {{ match.passeurs?.map(p => p.nom).join(', ') || 'Aucun' }}</p>
+      <p>Homme du match : {{ match.homme_du_matche?.nom || 'Non désigné' }}</p>
+      <p>Cartons :
+        <span *ngFor="let carton of match.cartons">
+          {{ carton.nom }} ({{ carton.type }})
+        </span>
+      </p>
+
+      <button (click)="viewMatch(match.id)">Voir Détails</button>
+      <button (click)="editMatch(match.id)">Éditer</button>
+       </div>
+ -->

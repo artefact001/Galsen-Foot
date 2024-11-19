@@ -22,8 +22,8 @@ export class AcceuilComponent implements OnInit {
     private readonly matcheService: MatcheService, // Marked as readonly
     private readonly fb: FormBuilder ) {// Marked as readonly
     this.matcheForm = this.fb.group({
-      equipe_local: ['', Validators.required],
-      equipe_visiteur: ['', Validators.required],
+      equipe1: ['', Validators.required],
+      equipe2: ['', Validators.required],
       date: ['', Validators.required],
       lieu: ['', Validators.required]
     });

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Responsive</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+</head>
+<body>
+
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div id="sidebar" class="bg-dark text-white" style="width: 250px;">
+        <div class="p-3">
+            <h3 class="text-white">Galsen Foot</h3>
+        </div>
+        <div class="mt-3">
+            <a href="#" class="sidebar-link">
+                <i class="fas fa-home"></i>
+                Accueil
+            </a>
+            <a href="#" class="sidebar-link">
+                <i class="fas fa-chart-bar"></i>
+                Statistiques
+            </a>
+            <a href="/users" class="sidebar-link">
+                <i class="fas fa-users"></i>
+                Utilisateurs
+            </a>
+            <a href="#" class="sidebar-link">
+                <i class="fas fa-cog"></i>
+                Paramètres
+            </a>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
+    
+ <div class="container mt-4">
+      <h1 class="text-center mb-4">Tirage au Sort</h1>
+
+      <!-- Formulaire de lancement de tirage -->
+      <form [formGroup]="tirageForm" (ngSubmit)="lancerTirage()" class="mb-5">
+        <div class="row">
+          <div class="col-md-4">
+            <label for="zone_id" class="form-label">Zone</label>
+            
+            <!-- <select name="" id=""> -->
+            <input
+              type="enum"
+              id="zone_id"
+              formControlName="zone_id"
+              class="form-control"
+              placeholder="ID de la Zone"
+            />
+            <!-- </select> -->
+            <div *ngIf="tirageForm.get('zone_id')?.invalid && tirageForm.get('zone_id')?.touched" class="text-danger">
+              La zone est requise.
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="nombre_poules" class="form-label">Nombre de Poules</label>
+            <input
+              type="number"
+              id="nombre_poules"
+              formControlName="nombre_poules"
+              class="form-control"
+              placeholder="Nombre de Poules"
+            />
+            <div *ngIf="tirageForm.get('nombre_poules')?.invalid && tirageForm.get('nombre_poules')?.touched" class="text-danger">
+              Veuillez indiquer un nombre valide.
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="phase" class="form-label">Phase</label>
+            <select id="phase" formControlName="phase" class="form-select">
+              <option value="">Choisir une phase</option>
+              <option value="Phase de groupes">Phase de groupes</option>
+              <!-- <option value="Quarts de finale">Quarts de finale</option>
+              <option value="Demi-finales">Demi-finales</option>
+              <option value="Finale">Finale</option> -->
+            </select>
+            <div *ngIf="tirageForm.get('phase')?.invalid && tirageForm.get('phase')?.touched" class="text-danger">
+              La phase est requise.
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-4" [disabled]="tirageForm.invalid">
+          Lancer le Tirage
+        </button>
+      </form>
+
+      <!-- Affichage des poules -->
+      <div *ngIf="poules.length > 0">
+        <h2 class="text-center">Résultats du Tirage</h2>
+        <div class="row">
+          <div *ngFor="let poule of poules" class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-header bg-primary text-white">{{ poule.nom }}</div>
+              <div class="card-body">
+                <ul class="list-group">
+                  <li *ngFor="let equipe of poule.equipes" class="list-group-item">
+                    Équipe {{ equipe }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+document.getElementById('sidebarToggle').addEventListener('click', function() {
+    document.getElementById('sidebar').classList.toggle('active');
+});
+
+// Fermer la sidebar en cliquant en dehors sur mobile
+document.addEventListener('click', function(event) {
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    
+    if (window.innerWidth <= 768) {
+        if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+            sidebar.classList.remove('active');
+        }
+    }
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

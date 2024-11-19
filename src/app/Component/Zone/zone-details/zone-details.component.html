@@ -1,0 +1,10 @@
+<h2>Détails de la Zone</h2>
+<div *ngIf="zone">
+  <p><strong>Nom:</strong> {{ zone.nom }}</p>
+  <p><strong>Localité:</strong> {{ zone.localite }}</p>
+  <!-- <p><strong>Gestionnaire (user_id):</strong> {{ zone.user_id || 'Non défini' }}</p> -->
+</div>
+
+        
+
+<button (click)="zone.redirectTo('/zones')">Retour à la liste des zones</button>

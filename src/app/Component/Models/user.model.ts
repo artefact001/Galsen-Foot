@@ -7,3 +7,15 @@ export interface User {
     remember_token?: string;
     created_at?: Date;
     updated_at?: Date;
+
+
+}
+
+
+export interface UserModel {
+    id?: number;
+    nom?: string;
+    email?: string;
+    password?: string;
+    photo_profile? : string;
+}

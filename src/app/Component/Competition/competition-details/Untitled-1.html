@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .Tirage {
+            background: #1D2951;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+        .Rectangle24 {
+            background: white;
+            border-radius: 30px;
+        }
+        .Rectangle53 {
+            background: white;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+        .Rectangle12 {
+            background: #1D2951;
+            border-radius: 20px;
+        }
+        .Rectangle8, .Rectangle9 {
+            border-radius: 88px;
+        }
+        .Rectangle48, .Rectangle50, .Rectangle51, .Rectangle49 {
+            border-radius: 3px;
+        }
+        .Rectangle109 {
+            border-radius: 4px;
+        }
+        .Rectangle118, .Rectangle114 {
+            background: rgba(51, 102, 255, 0.20);
+            border-radius: 30px;
+        }
+        .Rectangle114 {
+            background: white;
+            box-shadow: 0px 12px 24px rgba(0, 72, 217, 0.05);
+            border: 1px #F2ECFF solid;
+        }
+        .Rectangle22, .Rectangle40, .Rectangle42, .Rectangle43, .Rectangle44, .Rectangle45, .Rectangle46 {
+            background: #F7F8FA;
+            border-radius: 8px;
+            border: 1px #EFF0F4 solid;
+        }
+        .TableCells {
+            background: white;
+            box-shadow: 0px 0px 0px;
+            filter: blur(0px);
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+            gap: 10px;
+            display: inline-flex;
+        }
+        .Icons8More {
+            position: relative;
+        }
+        .Vector {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="Tirage p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="Rectangle8 border border-secondary">
+                            <img class="Rectangle9" src="https://via.placeholder.com/40x40" alt="Profile">
+                        </div>
+                        <div class="ml-3">
+                            <div class="Samantha text-white font-weight-bold">Samba bery</div>
+                            <div class="SamanthaEmailCom text-white-50">+998 (99) 436-46-15</div>
+                        </div>
+                    </div>
+                    <div class="Rectangle53 p-2 mb-3">
+                        <div class="TableauDeBord text-white font-weight-bold">TABLEAU DE BORD</div>
+                    </div>
+                    <div class="Rectangle12 p-2 mb-3">
+                        <div class="AjouterUneLicence text-white font-weight-bold">Ajouter une Licence</div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="VuesaxLinearNotificationStatus d-flex justify-content-center align-items-center">
+                            <div class="VuesaxLinearSetting4 d-flex flex-column justify-content-start align-items-start">
+                                <div class="Setting4 position-relative">
+                                    <div class="Vector border border-white"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ml-3">
+                            <div class="Settings text-white font-weight-bold">Settings</div>
+                        </div>
+                    </div>
+                    <!-- Add more sidebar items as needed -->
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="Rectangle24 p-4 mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="GestionDesLicences text-dark font-weight-bold">Gestion des Licences</div>
+                        <div class="MajesticonsDoorExit">
+                            <div class="Group d-flex justify-content-center align-items-center">
+                                <div class="Vector bg-secondary"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Rectangle53 p-2 mb-3">
+                        <div class="CatGorieCadette text-white font-weight-bold">Catégorie Cadette</div>
+                    </div>
+                    <div class="Rectangle12 p-2 mb-3">
+                        <div class="AjouterUneLicence text-white font-weight-bold">Ajouter une Licence</div>
+                    </div>
+                    <!-- Add more content as needed -->
+                </div>
+                <div class="Rectangle24 p-4 mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="BranchesList text-dark font-weight-bold">Branches list</div>
+                        <div class="Group10967 d-flex align-items-center">
+                            <div class="Rectangle118"></div>
+                            <div class="Rectangle114"></div>
+                            <div class="Group10967 d-flex align-items-center">
+                                <div class="VuesaxLinearSearchNormal d-flex justify-content-center align-items-center">
+                                    <div class="SearchNormal position-relative">
+                                        <div class="Vector border border-secondary"></div>
+                                    </div>
+                                </div>
+                                <div class="SearchByName text-secondary font-weight-bold">Search by Name</div>
+                            </div>
+                        </div>
+                        <div class="Group10993 d-flex align-items-center ml-3">
+                            <div class="Rectangle109 border border-primary"></div>
+                            <div class="AddNewBranches text-primary font-weight-bold">Add New Branches</div>
+                        </div>
+                    </div>
+                    <div class="Rectangle22 p-2 mb-3">
+                        <div class="Numero text-dark font-weight-bold">NUMERO</div>
+                        <div class="Prenom text-secondary font-weight-bold">PRENOM</div>
+                        <div class="Telephon text-secondary font-weight-bold text-capitalize">TELEPHON</div>
+                        <div class="Date text-secondary font-weight-bold text-capitalize">DATE</div>
+                        <div class="Adresse text-secondary font-weight-bold text-capitalize">ADRESSE</div>
+                        <div class="NLicence text-secondary font-weight-bold text-capitalize">N_Licence</div>
+                        <div class="Action text-secondary font-weight-bold text-capitalize">Action</div>
+                    </div>
+                    <!-- Add more table rows as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

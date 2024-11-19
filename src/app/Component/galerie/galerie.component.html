@@ -1,0 +1,113 @@
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Responsive</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+</head>
+<body>
+
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div id="sidebar" class="bg-dark text-white" style="width: 250px;">
+        <div class="p-3">
+            <h3 class="text-white">Dashboard</h3>
+        </div>
+        <div class="mt-3">
+            <a href="#" class="sidebar-link">
+                <i class="fas fa-home"></i>
+                Accueil
+            </a>
+            <a href="#" class="sidebar-link">
+                <i class="fas fa-chart-bar"></i>
+                Statistiques
+            </a>
+            <a href="/users" class="sidebar-link">
+                <i class="fas fa-users"></i>
+                Utilisateurs
+            </a>
+            <a href="#" class="sidebar-link">
+                <i class="fas fa-cog"></i>
+                Paramètres
+            </a>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
+    
+    
+    
+ <div class="container">
+  <h2>Galerie</h2>
+
+  <!-- Image Upload Section -->
+  <div class="upload-section">
+    <input type="file" (change)="onFileSelected($event)" accept="image/*">
+    <button (click)="uploadImage()" class="btn btn-primary">Upload Image</button>
+    <div *ngIf="uploadError" class="alert alert-danger">{{ uploadError }}</div>
+  </div>
+
+  <!-- Display Images -->
+  <div class="image-gallery">
+    <div *ngFor="let galerie of galeries" class="gallery-item">
+      <img [src]="'http://localhost:8000/storage/' + galerie.image" alt="Gallery Image">
+      <button (click)="deleteImage(galerie.id)" class="btn btn-danger">Delete</button>
+    </div>
+  </div>
+</div>
+
+ 
+
+
+
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+document.getElementById('sidebarToggle').addEventListener('click', function() {
+    document.getElementById('sidebar').classList.toggle('active');
+});
+
+// Fermer la sidebar en cliquant en dehors sur mobile
+document.addEventListener('click', function(event) {
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    
+    if (window.innerWidth <= 768) {
+        if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+            sidebar.classList.remove('active');
+        }
+    }
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

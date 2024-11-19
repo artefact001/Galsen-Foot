@@ -1,0 +1,31 @@
+<div class="min-vh-100 d-flex">
+  <!-- Image placeholder section (50% of the page) -->
+  <div class="col-12 col-lg-6 d-none d-lg-block p-0">
+    <div class="w-100 h-100" style="background-color: #f8f9fa; background-image: url('https://img.freepik.com/photos-premium/jeune-garcon-thailandais-jouer-au-football-au-dessus-du-coup-tete-coucher-du-soleil_46383-37.jpg?uid=R128627789&ga=GA1.1.1817262845.1713973150&semt=ais_hybrid'); background-size: cover; background-position: center;">
+      <!-- You can replace the placeholder URL above with your actual image URL -->
+    </div>
+  </div>
+
+  <!-- Login form section (50% of the page) -->
+  <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center bg-white">
+    <div class="w-100 p-4 p-sm-5" style="max-width: 500px;">
+      <h1 class="h4 font-weight-bold text-center mb-4">Bienvenue</h1>
+      <form>
+        <div class="mb-3">
+          <input type="email" class="form-control py-3" id="email" name="email" [(ngModel)]="userObject.email" placeholder="Email" />
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control py-3" id="password" name="password" [(ngModel)]="userObject.password" placeholder="Mot de passe" />
+        </div>
+        <button type="submit" (click)="login()"
+          class="btn btn-primary btn-block py-3 text-white" style="background-color: #4507d8;">
+          <svg class="bi bi-person-fill mr-2" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm6-6a4 4 0 1 0-8 0 4 4 0 0 0 8 0z"/>
+            <path d="M12 5v4m1-2h4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Connexion
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

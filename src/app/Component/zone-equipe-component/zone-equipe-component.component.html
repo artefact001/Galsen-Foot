@@ -1,0 +1,38 @@
+<div class="container mt-auto">
+  <h2>Sélectionnez une Zone</h2>
+  <select
+    class="form-select"
+    [(ngModel)]="selectedZone"
+    (change)="fetchEquipes()"
+  >
+    <option *ngFor="let zone of zones" [value]="zone.id">{{ zone.nom }}</option>
+  </select>
+  </div>
+  <div class="container mt-auto">
+
+
+  <div *ngIf="equipes && equipes.length > 0" class="mt-4">
+    <h3>Équipes de la zone</h3>
+    <ul class="list-group">
+      <li *ngFor="let equipe of equipes" class="list-group-item">
+        {{ equipe.nom }}
+        <span></span>
+
+        <!-- //filtrer les equipes qui participent a une competition lorsque l'on clique sur participer -->
+        <button class="btn btn-primary" (click)="ajouterEquipe(equipe)">
+        Participer  </button>
+        <span></span>
+
+        <button class="btn btn-primary" (click)="suspenderEquipe(equipe)">
+        Suspendre</button>
+
+
+      </li>
+
+    </ul>
+  </div>
+
+  <div *ngIf="equipes && equipes.length === 0 && selectedZone" class="mt-4">
+    <p>Aucune équipe trouvée pour cette zone.</p>
+  </div>
+</div>

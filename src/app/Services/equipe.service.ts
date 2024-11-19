@@ -20,13 +20,16 @@ export class EquipeService {
   }
 
   // Obtenir les équipes par zone
-  getEquipesByZone (zoneId: number): Observable<Equipe[]> {
-    return this.http
-      .get<Equipe[]>(`${this.apiUrl}?zone_id=${zoneId}`, {
-        headers: this.getHeaders()
-      })
-      .pipe(catchError(this.handleError))
-  }
+ getEquipesByZone(zoneId: number): Observable<Equipe[]> {
+  const url = `${this.apiUrl}?zone_id=${zoneId}`;
+  return this.http.get<Equipe[]>(url, { headers: this.getHeaders() }).pipe(
+    catchError((error) => {
+      console.error(`Erreur lors de la récupération des équipes pour la zone ${zoneId}:`, error);
+      return throwError(() => new Error('Erreur lors de la récupération des équipes.'));
+    })
+  );
+}
+
 
   // Ajouter une nouvelle équipe
   addEquipe (equipe: Equipe): Observable<Equipe> {

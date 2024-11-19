@@ -4,26 +4,23 @@
   <div class="container">
     <nav class="navbar navbar-light navbar-expand-lg py-4">
       <a href="index.html" class="navbar-brand">
-        <h1 class="text-primary fw-bold mb-0">Foot<span class="text-dark">Navétane</span> </h1>
+        <h1 class="text-primary fw-bold mb-0">Galsen<span class="text-dark">Foot</span> </h1>
       </a>
       <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="fa fa-bars text-primary"></span>
       </button>
 
-      <!-- <a href="" class="btn btn-white py-2 px-4 d-none d-xl-inline-block rounded-pill nav-link"
-        [routerLink]="['/login']" routerLinkActive="active">Connexion</a>
-       -->
 
-      <!-- <a class="btn btn-white py-2 px-4 d-none d-xl-inline-block rounded-pill nav-link" routerLink="/login"
-        routerLinkActive="active">Connexion</a> -->
+
 
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav mx-auto">
-          <a href="index.html" class="nav-item nav-link active">Acceuil</a>
+          <a href="#" class="nav-item nav-link active">Acceuil</a>
           <!-- <a href="about.html" class="nav-item nav-link">About</a> -->
           <a href="service.html" class="nav-item nav-link">Blog</a>
           <a href="event.html" class="nav-item nav-link">Matches</a>
           <a href="menu.html" class="nav-item nav-link">Resultats</a>
+        </div>
         </div>
 
 
@@ -34,14 +31,21 @@
 
 
         <!-- <a href="" class="btn btn-white py-2 px-4 d-none d-xl-inline-block rounded-pill" s="nav-link"
-          [routerLink]="['/login']" routerLinkActive="active">Connexion</a> -->
+          [routerLink]="['/connexion']" routerLinkActive="active">Connexion</a> -->
 
 
-          <a class="btn btn-white py-2 px-4 d-none d-xl-inline-block rounded-pill nav-link" routerLink="['/login']"
-            routerLinkActive="active">Connexion</a>
+          <!-- <a class="btn btn-white py-2 px-4 d-none d-xl-inline-block rounded-pill nav-link" routerLink="['/connexion']"
+            routerLinkActive="active">Connexion</a> -->
 
+      <a class="btn btn-white py-2 px-4 d-none d-xl-inline-block rounded-pill nav-link" routerLink="/Connexion"
+        routerLinkActive="active">Connexion</a>
 
-      </div>
+<!--
+      <a href="" class="btn btn-white py-2 px-4 d-none d-xl-inline-block rounded-pill nav-link"
+        [routerLink]="['/Connexion']" routerLinkActive="active">Connexion</a>
+       -->
+
+      <!-- </div> -->
     </nav>
   </div>
 </div>
@@ -147,7 +151,7 @@
 
 <!-- Matches Start -->
 <!-- <section> -->
-<div>
+<!-- <div>
   <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 wow bounceInUp" data-wow-delay="0.1s">
     <li class="nav-item p-2">
       <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill"
@@ -157,37 +161,36 @@
     </li>
   </ul>
   <div class="container my-4"></div>
-  <div class="row">
+  <div class="row"> -->
     <!-- Card 1 -->
-   
+
     <!-- stylisers commme affichage matches pour -->
     <!-- <div class="row">
       <div class="col-md-3 col-sm-6" *ngFor="let matche of matches">
         <div class="card shadow-sm p-3 mb-5 bg-white rounded">
-          <div class="d-flex justify-content-center align-items-center mb-2">
-            <Team logos (replace 'image.png' with the correct team logo path) -->
-            <!-- <img [src]="'assets/images/' + matche.equipe1" alt="{{ matche.equipe1 }} logo"
+          <div class="d-flex justify-content-center align-items-center mb-2"> -->
+            <!-- <Team logos (replace 'image.png' with the correct team logo path) -->
+            <!-- <img [src]="'assets/images/' + matche" alt="{{ matche }} logo"
               class="team-logo">
             <span class="mx-3 vs-text">VS</span>
-            <img [src]="'assets/images/' + matche.equipe2" alt="{{ matche.equipe2 }} logo"
+            <img [src]="'assets/images/' + matche" alt="{{ matche }} logo"
               class="team-logo"> -->
 
           <!-- Team names -->
           <!-- <h5 class="text-center">
-            {{ matche.equipe1 }} <span class="vs">vs</span> {{ matche.equipe2 }}
+            {{ matche }} <span class="vs">vs</span> {{ matche }}
           </h5> -->
 
           <!-- Match date and time -->
          <!-- <p class="text-center">Date: {{ matche.date_matche | date: 'shortDate' }} <span class="matche-time">17h30</span></p> -->
 
           <!-- Match location -->
-          <!-- <p class="text-center">Location: {{ matche.lieu }}</p>
-        </div>
+          <!-- <p class="text-center">Location: {{ matche }}</p>
       </div>
-    </div> -->
-  <!-- </div> -->
-<!-- </div> -->
-<!-- </section> -->
+    </div>
+  </div>
+</div> -->
+ <!-- </section> -->
 <!-- Matches End -->
 
 
@@ -205,133 +208,133 @@
            </a>
          </li>
 
-    <!-- </div> -->
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Position</th>
-          <th>Equipe</th>
-          <th>MJ</th>
-          <th>G</th>
-          <th>P</th>
-          <th>N</th>
-          <th>BM</th>
-          <th>BE</th>
-          <th>Pts</th>
-          <th>DB</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>1</th>
-          <td>Diappo</td>
-          <td>5</td>
-          <td>6</td>
-          <td>9</td>
-          <td>0</td>
-          <td>3</td>
-          <td>9</td>
-          <td>12</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <th>2</th>
-          <td>Diappo</td>
-          <td>5</td>
-          <td>6</td>
-          <td>9</td>
-          <td>0</td>
-          <td>3</td>
-          <td>9</td>
-          <td>12</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <th>3</th>
-          <td>Diappo</td>
-          <td>5</td>
-          <td>6</td>
-          <td>9</td>
-          <td>0</td>
-          <td>3</td>
-          <td>9</td>
-          <td>12</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <th>4</th>
-          <td>Diappo</td>
-          <td>5</td>
-          <td>6</td>
-          <td>9</td>
-          <td>0</td>
-          <td>3</td>
-          <td>9</td>
-          <td>12</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <th>5</th>
-          <td>Diappo</td>
-          <td>5</td>
-          <td>6</td>
-          <td>9</td>
-          <td>0</td>
-          <td>3</td>
-          <td>9</td>
-          <td>12</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <th>6</th>
-          <td>Diappo</td>
-          <td>5</td>
-          <td>6</td>
-          <td>9</td>
-          <td>0</td>
-          <td>3</td>
-          <td>9</td>
-          <td>12</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <th>7</th>
-          <td>Diappo</td>
-          <td>5</td>
-          <td>6</td>
-          <td>9</td>
-          <td>0</td>
-          <td>3</td>
-          <td>9</td>
-          <td>12</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <th>8</th>
-          <td>Diappo</td>
-          <td>5</td>
-          <td>6</td>
-          <td>9</td>
-          <td>0</td>
-          <td>3</td>
-          <td>9</td>
-          <td>12</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <th>9</th>
-          <td>Diappo</td>
-          <td>5</td>
-          <td>6</td>
-          <td>9</td>
-          <td>0</td>
-          <td>3</td>
-          <td>9</td>
-          <td>12</td>
-          <td>2</td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- </div> --><table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Position</th>
+      <th>Equipe</th>
+      <th>MJ</th>
+      <th>G</th>
+      <th>P</th>
+      <th>N</th>
+      <th>BM</th>
+      <th>BE</th>
+      <th>Pts</th>
+      <th>DB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Diappo</td>
+      <td>5</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>12</td>
+      <td>5</td>
+      <td>13</td>
+      <td>+7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Alliance</td>
+      <td>5</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>10</td>
+      <td>6</td>
+      <td>10</td>
+      <td>+4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Djoubo</td>
+      <td>5</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>8</td>
+      <td>6</td>
+      <td>10</td>
+      <td>+2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Medina</td>
+      <td>5</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>7</td>
+      <td>8</td>
+      <td>7</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Sigoo</td>
+      <td>5</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>6</td>
+      <td>8</td>
+      <td>7</td>
+      <td>-2</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Sham</td>
+      <td>5</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>5</td>
+      <td>9</td>
+      <td>4</td>
+      <td>-4</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Colobane</td>
+      <td>5</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>4</td>
+      <td>10</td>
+      <td>4</td>
+      <td>-6</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Sacre coeur</td>
+      <td>5</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>3</td>
+      <td>11</td>
+      <td>3</td>
+      <td>-8</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Grand dakar</td>
+      <td>5</td>
+      <td>0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>12</td>
+      <td>1</td>
+      <td>-10</td>
+    </tr>
+  </tbody>
+</table>
+
 
 <!-- Ours Statistiques  -->
 
@@ -373,10 +376,10 @@
                  </div>
                  <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.3s">
                    <div class="event-img position-relative">
-                     <img class="img-fluid rounded w-100" src="asset/images/Image.png" alt="">
+                     <img class="img-fluid rounded w-100" src="asset/images/téléchargement.jpeg" alt="">
                      <div class="event-overlay d-flex flex-column p-4">
                        <!-- <h4 class="me-auto">Police</h4> -->
-                       <a href="asset/images/Image.png" data-lightbox="event-2" class="my-auto">
+                       <a href="asset/images/téléchargement.jpeg" data-lightbox="event-2" class="my-auto">
 
                        <!-- <i class="fas fa-search-plus text-dark fa-2x"></i> -->
                        </a>
@@ -385,10 +388,10 @@
                  </div>
                  <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.5s">
                    <div class="event-img position-relative">
-                     <img class="img-fluid rounded w-100" src="asset/images/Image.png" alt="">
+                     <img class="img-fluid rounded w-100" src="asset/images/téléchargement (2).jpeg" alt="">
                      <div class="event-overlay d-flex flex-column p-4">
                        <!-- <h4 class="me-auto">sante et aide</h4> -->
-                       <a href="asset/images/Image.png" data-lightbox="event-3" class="my-auto">
+                       <a href="asset/images/téléchargement (2).jpeg" data-lightbox="event-3" class="my-auto">
                        <!-- <i class="fas fa-search-plus text-dark fa-2x"></i> -->
                            </a>
                      </div>
@@ -396,10 +399,10 @@
                  </div>
                  <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.7s">
                    <div class="event-img position-relative">
-                     <img class="img-fluid rounded w-100" src="asset/images/Image.png" alt="">
+                     <img class="img-fluid rounded w-100" src="asset/images/image (1).png" alt="">
                      <div class="event-overlay d-flex flex-column p-4">
                        <!-- <h4 class="me-auto">securité</h4> -->
-                       <a href="asset/images/Image.png" data-lightbox="event-4" class="my-auto">
+                       <a href="asset/images/image (1).png" data-lightbox="event-4" class="my-auto">
                        <!-- <i class="fas fa-search-plus text-dark fa-2x"></i>    -->
 
                            </a>
@@ -408,10 +411,10 @@
                  </div>
                  <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.1s">
                    <div class="event-img position-relative">
-                     <img class="img-fluid rounded w-100" src="asset/images/Image.png" alt="">
+                     <img class="img-fluid rounded w-100" src="asset/images/image (4).png" alt="">
                      <div class="event-overlay d-flex flex-column p-4">
                        <!-- <h4 class="me-auto">esprit de groupe</h4> -->
-                       <a href="asset/images/Image.png" data-lightbox="event-5" class="my-auto">
+                       <a href="asset/images/image (4).png" data-lightbox="event-5" class="my-auto">
 
                        <!-- <i class="fas fa-search-plus text-dark fa-2x"></i> -->
                            </a>
@@ -420,10 +423,10 @@
                  </div>
                  <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.3s">
                    <div class="event-img position-relative">
-                     <img class="img-fluid rounded w-100" src="asset/images/Image.png" alt="">
+                     <img class="img-fluid rounded w-100" src="asset/images/image (6).png" alt="">
                      <div class="event-overlay d-flex flex-column p-4">
                        <!-- <h4 class="me-auto">cohesion</h4> -->
-                       <a href="asset/images/Image.png" data-lightbox="event-6" class="my-auto">
+                       <a href="asset/images/image (6).png" data-lightbox="event-6" class="my-auto">
                        <!-- <i
                        class="fas fa-search-plus text-dark fa-2x"></i> -->
 
@@ -433,10 +436,10 @@
                  </div>
                  <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.5s">
                    <div class="event-img position-relative">
-                     <img class="img-fluid rounded w-100" src="asset/images/Image.png" alt="">
+                     <img class="img-fluid rounded w-100" src="asset/images/image 41.png" alt="">
                      <div class="event-overlay d-flex flex-column p-4">
                        <!-- <h4 class="me-auto">chants</h4> -->
-                       <a href="asset/images/Image.png" data-lightbox="event-7" class="my-auto">
+                       <a href="asset/images/image 41.png" data-lightbox="event-7" class="my-auto">
                        <!-- <i
                            class="fas fa-search-plus text-dark fa-2x"></i> -->
                            </a>
@@ -445,13 +448,13 @@
                  </div>
                  <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.7s">
                    <div class="event-img position-relative">
-                     <img class="img-fluid rounded w-100" src="asset/images/Image.png" alt="">
+                     <img class="img-fluid rounded w-100" src="asset/images/image 3.png" alt="">
                      <div class="event-overlay d-flex flex-column p-4">
                        <!-- <h4 class="me-auto">danse</h4> -->
-                       <a href="asset/images/Image.png" data-lightbox="event-17" class="my-auto">
+                       <a href="asset/images/image 3.png" data-lightbox="event-17" class="my-auto">
 
                        <!-- <i class="fas fa-search-plus text-dark fa-2x"></i> -->
-                       
+
                        </a>
                      </div>
                    </div>
@@ -466,10 +469,10 @@
                <div class="row g-4">
                  <div class="col-md-6 col-lg-3">
                    <div class="event-img position-relative">
-                     <img class="img-fluid rounded w-100" src="asset/images/Image.png" alt="">
+                     <img class="img-fluid rounded w-100" src="asset/images/images.jpeg" alt="">
                      <div class="event-overlay d-flex flex-column p-4">
                        <!-- <h4 class="me-auto"> Mistique</h4> -->
-                       <a href="asset/images/Image.png" data-lightbox="event-8" class="my-auto">
+                       <a href="asset/images/images.jpeg" data-lightbox="event-8" class="my-auto">
                        <!-- <i
                            class="fas fa-search-plus text-dark fa-2x"></i> -->
                            </a>
@@ -478,10 +481,10 @@
                  </div>
                  <div class="col-md-6 col-lg-3">
                    <div class="event-img position-relative">
-                     <img class="img-fluid rounded w-100" src="asset/images/Image.png" alt="">
+                     <img class="img-fluid rounded w-100" src="asset/images/football 1.png" alt="">
                      <div class="event-overlay d-flex flex-column p-4">
                        <!-- <h4 class="me-auto">Jeux d'equipe</h4> -->
-                       <a href="asset/images/Image.png" data-lightbox="event-9" class="my-auto">
+                       <a href="asset/images/football 1.png" data-lightbox="event-9" class="my-auto">
                        <!-- <i
                            class="fas fa-search-plus text-dark fa-2x"></i> -->
                            </a>
@@ -575,10 +578,10 @@
                  </div>
                  <div class="col-md-6 col-lg-3">
                    <div class="event-img position-relative">
-                     <img class="img-fluid rounded w-100" src="asset/images/Image.png" alt="">
+                     <img class="img-fluid rounded w-100" src="asset/images/téléchargement.jpeg" alt="">
                      <div class="event-overlay d-flex flex-column p-4">
                        <!-- <h4 class="me-auto">Ascpect Culturel</h4> -->
-                       <a href="asset/images/Image.png" data-lightbox="event-15" class="my-auto">
+                       <a href="asset/images/téléchargement.jpeg" data-lightbox="event-15" class="my-auto">
                        <!-- <i class="fas fa-search-plus text-dark fa-2x"></i> -->
                            </a>
                      </div>
@@ -600,7 +603,7 @@
 
 
    <!-- Footer Start -->
-   <div class="container-fluid footer py-6 my-6 mb-0 bg-light wow bounceInUp" data-wow-delay="0.1s">
+   <!-- <div class="container-fluid footer py-6 my-6 mb-0 bg-light wow bounceInUp" data-wow-delay="0.1s"> -->
      <div class="container">
        <div class="row">
          <div class="col-lg-3 col-md-6">
@@ -608,13 +611,13 @@
              <h1 class="text-primary">Foot<span class="text-dark">Navetane</span></h1>
              <p class="lh-lg mb-4">Navétanes, c'est bien plus qu'un simple tournoi de football. C'est un véritable
                ciment social qui unit les quartiers. Sur les terrains. </p>
-             <!-- <div class="footer-icon d-flex">
-              
-         </div> -->
+             <!-- <div class="footer-icon d-flex"> -->
+
+         </div>
        </div>
      </div>
    </div>
-   <!-- Footer End -->
+    <!-- Footer End  -->
 
 
    <!-- Copyright Start -->
