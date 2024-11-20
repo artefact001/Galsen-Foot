@@ -1,210 +1,99 @@
-// import { Component, OnInit } from '@angular/core';
-// import {
-//   FormBuilder,
-//   FormGroup,
-//   Validators,
-//   ReactiveFormsModule
-// } from '@angular/forms';
-// import { CommonModule } from '@angular/common';
-// import { Tirage, CompetitionEquipe, Competition, Zone } from '../../Models/Tout.Model';
-// import { TirageService } from '../../../Services/tirage.service';
-// import { CompetitionService } from '../../../Services/competition.service';
-
-// @Component({
-//   selector: 'app-tirage\tirages-list.component',
-//   standalone: true,
-//   imports: [ReactiveFormsModule, CommonModule],
-//   templateUrl: './tirages-list.component.html',
-//   styleUrls: ['./tirages-list.component.css']
-// })
-// export class TirageComponent implements OnInit {
-//   tirageForm!: FormGroup;
-//   tirages: Tirage[] = [];
-//   competitions: Competition[] = []; // Liste des compétitions
-//   equipes: CompetitionEquipe[] = []; // Liste des équipes participant à la compétition sélectionnée
-
-
-//   // equipes: any[] = [];
-//   selectedZone: number | null = null;
-//   zones: Zone[] = [];
-//   errorMessage: string = '';
-//   constructor(
-//     private fb: FormBuilder,
-//     private tirageService: TirageService,
-//     private competitionService: CompetitionService
-//   ) {}
-
-//   ngOnInit(): void {
-//     this.initForm();
-//     this.loadCompetitions();
-//     this.loadTirages();
-//   }
-
-//   // Initialisation du formulaire
-//   initForm(): void {
-//     this.tirageForm = this.fb.group({
-//       phase: ['', Validators.required],
-//       competition_id: ['', Validators.required],
-//       nombre_poules: ['', Validators.required]
-//     });
-//   }
-
-//   // Charger les tirages
-//   loadTirages(): void {
-//     this.tirageService.getTirages().subscribe(data => {
-//       this.tirages = data;
-//     });
-//   }
-
-//   // Charger les compétitions
-//   loadCompetitions(): void {
-//     this.competitionService.getAllCompetitions().subscribe(data => {
-//       this.competitions = data;
-//     });
-//   }
-
-//  // Charger les équipes dès le début, en utilisant la première compétition si disponible
-// loadEquipes(competitionId: number): void {
-//   this.competitionService.getEquipesByCompetitionId(competitionId)
-//     .subscribe(
-//       (data: CompetitionEquipe[]) => {
-//         this.equipes = data;
-//       },
-//       (error: any) => {
-//         console.error('Erreur lors de la récupération des équipes:', error);
-//       }
-//     );
-
-// }
-
-
-//   // Gestion du changement de compétition sélectionnée
-//   onCompetitionChange(): void {
-//     const competitionId = this.tirageForm.get('competition_id')?.value;
-//     if (competitionId) {
-//       this.loadEquipes(competitionId);
-//     }
-//   }
-
-//   // Lancer un tirage
-//   onSubmit(): void {
-//     if (this.tirageForm.invalid) {
-//       return;
-//     }
-
-//     const formValues = this.tirageForm.value;
-//     this.tirageService.lancerTirage(formValues).subscribe(
-//       response => {
-//         console.log('Tirage lancé avec succès', response);
-//         alert('Le tirage a été lancé.');
-//         this.loadTirages(); // Recharger les tirages après l'ajout
-//       },
-//       error => {
-//         console.error('Erreur lors du lancement du tirage', error);
-//       }
-//     );
-//   }
-// }
-
-
-
-
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { Component, Injectable, OnInit } from '@angular/core';
+import { Observable, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { Competition, Equipe, Tirage } from '../../Models/Tout.Model';
 import { CommonModule } from '@angular/common';
-import { Tirage, CompetitionEquipe, Competition, Zone } from '../../Models/Tout.Model';
-import { TirageService } from '../../../Services/tirage.service';
-import { CompetitionService } from '../../../Services/competition.service';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+@Injectable({
+  providedIn: 'root',
+})
+
 @Component({
   selector: 'app-tirages-list.component',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports : [ ReactiveFormsModule, CommonModule],
   templateUrl: './tirages-list.component.html',
-  styleUrls: ['./tirages-list.component.css']
-})
-export class TirageslistComponent implements OnInit {
-  tirageForm: FormGroup;
-  poules: any[] = [];
-  tirageService: any;
-  // tirages: any;
-  tirages: Tirage[] = [];
-  competitions: Competition[] = []; // Liste des compétitions
-  equipes: CompetitionEquipe[] = []; // Liste des équipes participant à la compétition sélectionnée
-  loading: boolean = false; // Indique si les données sont en cours de chargement
-  error: string | null = null; // Stocker les messages d'erreur
+  styleUrls: ['./tirages-list.component.css'],
+ } )
 
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
-    this.tirageForm = this.fb.group({
-      zone_id: [null, Validators.required],
-      nombre_poules: [null, [Validators.required, Validators.min(1)]],
-      phase: ['', Validators.required],
-    });
-  }
+export class TiragesListComponent implements OnInit {
+onSubmit() {
+throw new Error('Method not implemented.');
+} 
+  private apiUrl = 'http://localhost:8000/api/tirages'; // Endpoint pour les tirages
+  private competitionsUrl = 'http://localhost:8000/api/competitions'; // Endpoint pour les compétitions
+  private equipesUrl = 'http://localhost:8000/api/equipes'; // Endpoint pour les équipes
+    tirageForm: any;
+    competitions: Competition[] = [];  // Define the type of the competitions array
+    zones: any[] = []; // Replace with actual type if available
 
- 
 
+
+
+  constructor(private http: HttpClient) {}
   ngOnInit(): void {
-    this.initForm();
-    this.fetchTirages();
-
+    throw new Error('Method not implemented.');
   }
 
-  // Initialisation du formulaire
-  initForm(): void {
-    this.tirageForm = this.fb.group({
-      phase: ['', Validators.required],
-      competition_id: [null, Validators.required],
-      zone_id: [null, Validators.required],
-      nombre_poules: [null, [Validators.required, Validators.min(1)]],
-    });
+  /**
+   * Récupérer tous les tirages, avec ou sans filtre par competitionId.
+   * @param competitionId ID de la compétition (optionnel)
+   */
+  getTirages(competitionId?: number): Observable<Tirage[]> {
+    const url = competitionId ? `${this.apiUrl}?competition_id=${competitionId}` : this.apiUrl;
+    return this.http.get<Tirage[]>(url, this.getOptions()).pipe(catchError(this.handleError));
   }
 
-  // Soumission du formulaire
-  onSubmit(): void {
-    if (this.tirageForm.invalid) {
-      this.tirageForm.markAllAsTouched();
-      return;
-    }
-
-    const formData = this.tirageForm.value;
-
-    // Appel API pour lancer le tirage
-    this.http.post('http://127.0.0.1:8000/api/tirages/lancer', formData).subscribe({
-      next: (response: any) => {
-        this.poules = response.poules || []; // Assurez-vous que "poules" est une clé correcte dans la réponse
-      },
-      error: (err) => {
-        console.error('Erreur lors du tirage :', err);
-        alert('Une erreur est survenue lors du tirage.');
-      }
-    });
+  /**
+   * Lancer un tirage.
+   * @param data Données nécessaires pour lancer le tirage
+   */
+  lancerTirage(data: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/lancer`, data, this.getOptions()).pipe(catchError(this.handleError));
   }
 
-
-  // Récupération des tirages depuis l'API
-  fetchTirages(): void {
-    this.loading = true;
-    this.http.get('http://127.0.0.1:8000/api/tirages').subscribe({
-      next: (data: any) => {
-        this.tirages = data; // Supposons que l'API retourne un tableau de tirages
-        this.loading = false;
-      },
-      error: (err) => {
-        console.error('Erreur lors du chargement des tirages :', err);
-        this.error = "Impossible de charger les tirages. Veuillez réessayer.";
-        this.loading = false;
-      }
-    });
+  /**
+   * Récupérer toutes les compétitions.
+   */
+  getAllCompetitions(): Observable<Competition[]> {
+    return this.http.get<Competition[]>(this.competitionsUrl, this.getOptions()).pipe(catchError(this.handleError));
   }
-  
-  // Charger les tirages
-  loadTirages(): void {
-    this.tirageService.getTirages().subscribe((data: Tirage[]) => {
-      this.tirages = data;
-    });
+
+  /**
+   * Récupérer les équipes par zone.
+   * @param zoneId ID de la zone
+   */
+  getEquipesByZone(zoneId: number): Observable<Equipe[]> {
+    const url = `${this.equipesUrl}?zone_id=${zoneId}`;
+    return this.http.get<Equipe[]>(url, this.getOptions()).pipe(catchError(this.handleError));
+  }
+
+  /**
+   * Obtenir les en-têtes pour les requêtes HTTP.
+   * Ajoute automatiquement le token d'authentification si présent.
+   */
+  private getHeaders(): HttpHeaders {
+    const token = localStorage.getItem('access_token') || '';
+    return new HttpHeaders({ Authorization: `Bearer ${token}` });
+  }
+
+  /**
+   * Obtenir les options HTTP incluant les headers.
+   */
+  private getOptions(): { headers: HttpHeaders } {
+    return { headers: this.getHeaders() };
+  }
+
+  /**
+   * Gérer les erreurs des requêtes HTTP.
+   * @param error Erreur interceptée
+   */
+  private handleError(error: any): Observable<never> {
+    console.error("Une erreur s'est produite :", error);
+    return throwError(() => new Error('Une erreur est survenue ; veuillez réessayer plus tard.'));
   }
 }

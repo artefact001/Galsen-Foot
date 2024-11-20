@@ -42,10 +42,10 @@
         .card-dashboard:hover {
             transform: translateY(-5px);
         }
-        
+         
         
         /* **************** */
- user-dropdown {
+  /* user-dropdown {
   position: relative;
   display: inline-block;
 }
@@ -93,4 +93,62 @@
 
 .dropdown-item:hover {
   background-color: #f5f5f5;
-}
+} */
+
+
+
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .inscription-container {
+            max-width: 400px;
+            padding: 20px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .inscription-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        .btn-primary {
+            width: 100%;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .error {
+            color: #dc3545;
+            font-size: 0.875em;
+            margin-top: 0.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .inscription-container {
+                padding: 15px;
+            }
+
+            .btn-primary {
+                font-size: 1rem;
+            }
+        }
+

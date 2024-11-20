@@ -48,7 +48,7 @@ export class ConnexionComponent {
                 this.router.navigateByUrl('admin-dashboard');
               }
               else if (response.user.role === 'zone'){
-                this.router.navigateByUrl('zones');
+                this.router.navigateByUrl('competitions');
               }
               else if (response.user.role === 'equipe'){
                 this.router.navigateByUrl('equipe-dashboard');
@@ -57,15 +57,15 @@ export class ConnexionComponent {
             else {
               this.router.navigateByUrl('dashboard');
             }
-            
+
           }
            dd(response);
         },
         (error) => {
-      
+
           console.error(error);
         }
-         
+
       );
     }
   }
