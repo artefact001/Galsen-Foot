@@ -14,6 +14,9 @@ import { Competition, Equipe } from '../../Component/Models/Tout.Model';
   styleUrl: './matches-list.component.css'
 })
 export class MatchesListComponent implements OnInit {
+backToAcceuil() {
+throw new Error('Method not implemented.');
+}
 
   matches: Matche[] = [];
   competitions: Competition [] =[];

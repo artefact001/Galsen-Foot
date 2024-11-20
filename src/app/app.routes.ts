@@ -41,20 +41,20 @@ import { MatchesAddComponent } from './matches/matches-add/matches-add.component
 export const routes: Routes = [
   // { path: 'login', component: LoginComponent },
   { path: 'connexion', component: ConnexionComponent },
-  { path: 'ajout/zone', component: InscriptionZoneComponent  },
+  { path: 'ajout/zone', component: InscriptionZoneComponent },
   { path: 'ajout/equipe', component: InscriptionEquipeComponent  } ,
   { path: 'galeries', component: GalerieComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
   // { path: 'zones', component: ZoneDashboardComponent },
   { path: 'equipe-dashboard', component: EquipeDashboardComponent },
-  { path: 'users', component: UserManagementComponent },
+  { path: 'users', component: UserManagementComponent  },
   {path: 'joueur', component: JoueurComponent},
 
 
    { path: 'articles', component: ArticleListComponent },
   { path: 'articles/create', component: ArticleFormComponent },
   { path: 'articles/:id', component: ArticleDetailsComponent  },
-  { path: 'articles/edit/:id', component: ArticleFormComponent },
+  { path: 'articles/edit/:id', component: ArticleFormComponent  },
 
 
    { path: 'zones', component: ZonesListComponent },  // Route to list all zones
@@ -67,16 +67,16 @@ export const routes: Routes = [
 
   // { path: 'tirage', component: TiragesListComponent },
 
-  { path: 'tirages', component: TiragesListComponent },
+  { path: 'tirages', component: TiragesListComponent  },
   // { path: 'tirages', component: TiragesListComponent },
   { path: 'tirages/lancer', component: TiragesListComponent  },
   { path: '', redirectTo: '/acceuil', pathMatch: 'full' },
   { path: 'acceuil', component: AcceuilComponent }, // Ensure this path and component are correct
-  { path: 'competitions',component: CompetitionsListComponent  },
+  { path: 'competitions',component: CompetitionsListComponent   },
     { path: 'competitions/create', component: CompetitionFormComponent   },
-    { path: 'competitions/edit/:id', component: CompetitionFormComponent },
-    { path: 'competitions/:id', component: CompetitionDetailsComponent },
-  { path: 'zone-equipe', component: ZoneEquipeComponent },
+    { path: 'competitions/edit/:id', component: CompetitionFormComponent   },
+    { path: 'competitions/:id', component: CompetitionDetailsComponent  },
+  { path: 'zone-equipe', component: ZoneEquipeComponent  },
   { path: '**', component: NotFoundComponent }
 
 //  canActivate: [EquipeGuard],
