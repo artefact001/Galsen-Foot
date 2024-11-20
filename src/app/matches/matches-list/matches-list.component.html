@@ -1,0 +1,73 @@
+<div class="container">
+  <h2>Liste des matchs</h2>
+ <!-- Section des matchs à venir -->
+<section>
+  <div>
+    <!-- Barre de navigation -->
+    <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 wow bounceInUp" data-wow-delay="0.1s">
+      <li class="nav-item p-2">
+        <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
+          <span class="text-dark" style="width: 150px;">Matches à venir</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Affichage des matchs sous forme de cartes -->
+    <div class="container my-4">
+      <div class="row">
+        <!-- Card pour chaque match -->
+        <div class="col-md-3 col-sm-6" *ngFor="let match of matches">
+          <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+            <!-- Logos des équipes -->
+            <div class="d-flex justify-content-center align-items-center mb-2">
+              <img [src]="'assets/images/Siggo.png' + match.equipe1_logo" alt="{{ match.equipe1_nom }} logo" class="team-logo">
+              <span class="mx-3 vs-text">VS</span>
+              <img [src]="'assets/images/Deggo.jpeg' + match.equipe2_logo" alt="{{ match.equipe2_nom }} logo" class="team-logo">
+            </div>
+
+            <!-- Noms des équipes -->
+            <h5 class="text-center">
+              {{ match.equipe1_nom }} <span class="vs">vs</span> {{ match.equipe2_nom }}
+            </h5>
+
+            <!-- Date et heure du match -->
+            <p class="text-center">Date: {{ match.date_matche | date: 'shortDate' }} <span class="matche-time">{{ match.heure_matche }}</span></p>
+
+            <!-- Lieu du match -->
+            <p class="text-center">Lieu: {{ match.lieux_matche }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tableau des matchs -->
+<!-- <div class="container my-4">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Competition</th>
+            <th>Équipe 1</th>
+            <th>Équipe 2</th>
+            <th>Date</th>
+            <th>Statut</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let match of matches">
+            <td>{{ match.competition.nom }}</td>
+            <td>{{ match.equipe1_nom }}</td>
+            <td>{{ match.equipe2_nom }}</td>
+            <td>{{ match.date_matche | date: 'shortDate' }}</td>
+            <td>{{ match.statut }}</td>
+            <td>
+              <button (click)="deleteMatch(match.id)" class="btn btn-danger">Supprimer</button>
+            </t    d>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+  </div>
+</section>
+
+</div>

@@ -1,10 +1,37 @@
 <h2>Liste des Zones</h2>
-
-
  
 <ul>
   <li *ngFor="let zone of zones">
     {{ zone.nom }} - {{ zone.localite }}
     <button (click)="viewZoneDetails(zone.id)">Voir les détails</button>
   </li>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-sm-6"> --> 
+      <!-- lister les equipes de cette zone -->
+      
+      </div>
+      <div class="col-sm-6">
+        <!-- lister les equipes de cette zone dans un tableaux -->
+                 
+                 <table>
+                 <th>Equipe</th>
+                 <th>Statut</th>
+                 <th>Actions</th>
+                   <tr *ngFor="let equipe of equipes">
+                     <td>{{ equipe.nom }}</td>
+                     <td>{{ equipe.statut }}</td>
+                     <td>
+                       <button class="btn btn-info" (click)="viewEquipeDetails(equipe.id)">Voir</button>
+                       <button class="btn btn-warning" (click)="editEquipe(equipe)">Modifier</button>
+                       <button class="btn btn-danger" (click)="deleteEquipe(equipe.id)">Supprimer</button>
+                     </td>
+                   </tr>
+                 </table>
+         
+           
+      </div>
+    </div>
+  
+  <!-- </div> -->
 </ul>

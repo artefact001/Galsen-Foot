@@ -18,7 +18,7 @@ constructor(private httpClient: HttpClient) {//+
       this.userRoles = ['equipe']; // Exemple de rôle
   }//+
   // constructor(private http: HttpClient) {
-     
+
 
   // }
   private http = inject(HttpClient);
@@ -62,9 +62,9 @@ constructor(private httpClient: HttpClient) {//+
   getToken(): string | null {
     return localStorage.getItem('access_token'); // Exemple d'obtention du token
   }
-  
-  
-  
+
+
+
   getUserRoles(): string[] | null {
     return this.userRoles;
   }

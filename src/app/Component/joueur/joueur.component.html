@@ -1,33 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -35,13 +6,13 @@
     <title>Dashboard Responsive</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
-</head>
-<body>
 
-<div class="d-flex">
+</head>
+<body> -->
+
+<!-- <div class="d-flex"> -->
     <!-- Sidebar -->
-    <div id="sidebar" class="bg-dark text-white" style="width: 250px;">
+    <!-- <div id="sidebar" class="bg-dark text-white" style="width: 250px;">
         <div class="p-3">
             <h3 class="text-white">Dashboard</h3>
         </div>
@@ -63,10 +34,10 @@
                 Paramètres
             </a>
         </div>
-    </div>
+    </div> -->
 
     <!-- Contenu principal -->
-    
+
 <div class="container">
   <h2>Gestion des Joueurs</h2>
   <form [formGroup]="joueurForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
@@ -151,22 +122,22 @@
         <p>Catégorie ID: {{ selectedJoueur.categorie.nom }}</p>
         <p>profil: {{ selectedJoueur.profil}}</p>
       </div>
-      
+
       <div>
-      
-      
+
+
       <!-- diaggrammes -->
-      
-      
+
+
       </div>
-      
+
     </div>
 
 
 
 
 
-</div>
+<!-- </div> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -178,7 +149,7 @@ document.getElementById('sidebarToggle').addEventListener('click', function() {
 document.addEventListener('click', function(event) {
     const sidebar = document.getElementById('sidebar');
     const sidebarToggle = document.getElementById('sidebarToggle');
-    
+
     if (window.innerWidth <= 768) {
         if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
             sidebar.classList.remove('active');
@@ -186,10 +157,10 @@ document.addEventListener('click', function(event) {
     }
 });
 </script>
-
+<!--
 </body>
 </html>
-
+ -->
 
 
 

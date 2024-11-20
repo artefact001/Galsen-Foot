@@ -1,20 +1,22 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Responsive</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
-</head>
-<body>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"> -->
+
+<!-- </head>
+<body> -->
+
+
 
 <div class="d-flex">
     <!-- Sidebar -->
     <div id="sidebar" class="bg-dark text-white" style="width: 250px;">
         <div class="p-3">
-            <h3 class="text-white">Galsen Foot</h3>
+            <h3 class="text-white">Dashboard</h3>
         </div>
         <div class="mt-3">
             <a href="#" class="sidebar-link">
@@ -37,73 +39,79 @@
     </div>
 
     <!-- Contenu principal -->
-    
-<div class="inscription-container">
-  <h2>Inscription</h2>
-  
-  <!-- Registration Form -->
-  <form [formGroup]="registrationForm" (ngSubmit)="registerZone()">
-    
-    <!-- Name Field -->
-    <div class="form-group">
-      <label for="nom">Nom</label>
-      <input type="text" id="nom" formControlName="nom" class="form-control" />
-      <div *ngIf="registrationForm.get('nom')?.invalid && registrationForm.get('nom')?.touched" class="error">
-        Le nom est requis.
-      </div>
-    </div>
 
-    <!-- Email Field -->
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" formControlName="email" class="form-control" />
-      <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched" class="error">
-        Un email valide est requis.
-      </div>
-    </div>
 
-    <!-- Password Field -->
-    <div class="form-group">
-      <label for="password">Mot de passe</label>
-      <input type="password" id="password" formControlName="password" class="form-control" />
-      <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched" class="error">
-        Mot de passe requis (min. 6 caractères).
-      </div>
-    </div>
 
-    <!-- Profile Picture Field -->
-    <div class="form-group">
-      <label for="photo_profile">Photo de profil</label>
-      <input type="file" id="photo_profile" (change)="onFileSelected($event)" class="form-control" />
-    </div>
+<div class="container-fluid d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="inscription-container">
+        <h2>Inscription</h2>
 
-    <!-- Zone Name Field -->
-    <div class="form-group">
-      <label for="nom_zone">Nom de la Zone</label>
-      <input type="text" id="nom_zone" formControlName="nom_zone" class="form-control" />
-      <div *ngIf="registrationForm.get('nom_zone')?.invalid && registrationForm.get('nom_zone')?.touched" class="error">
-        Le nom de la zone est requis.
-      </div>
-    </div>
+        <form [formGroup]="registrationForm" (ngSubmit)="registerZone()">
 
-    <!-- Locality Field -->
-    <div class="form-group">
-      <label for="localite">Localité</label>
-      <input type="text" id="localite" formControlName="localite" class="form-control" />
-      <div *ngIf="registrationForm.get('localite')?.invalid && registrationForm.get('localite')?.touched" class="error">
-        La localité est requise.
-      </div>
-    </div>
+            <!-- Champ Nom -->
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" formControlName="nom" class="form-control" />
+                <div *ngIf="registrationForm.get('nom')?.invalid && registrationForm.get('nom')?.touched" class="error">
+                    Le nom est requis.
+                </div>
+            </div>
 
-    <!-- Submit Button with Loading State -->
-    <button type="submit" class="btn btn-primary" [disabled]="isSubmitting || registrationForm.invalid">
-      <span *ngIf="isSubmitting">Inscription en cours...</span>
-      <span *ngIf="!isSubmitting">S'inscrire</span>
-    </button>
-    
-  </form>
+            <!-- Champ Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" formControlName="email" class="form-control" />
+                <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched" class="error">
+                    Un email valide est requis.
+                </div>
+            </div>
+
+            <!-- Champ Mot de Passe -->
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" formControlName="password" class="form-control" />
+                <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched" class="error">
+                    Mot de passe requis (min. 6 caractères).
+                </div>
+            </div>
+
+            <!-- Champ Photo de Profil -->
+            <div class="form-group">
+                <label for="photo_profile">Photo de profil</label>
+                <input type="file" id="photo_profile" (change)="onFileSelected($event)" class="form-control" />
+            </div>
+
+            <!-- Champ Nom de la Zone -->
+            <div class="form-group">
+                <label for="nom_zone">Nom de la Zone</label>
+                <input type="text" id="nom_zone" formControlName="nom_zone" class="form-control" />
+                <div *ngIf="registrationForm.get('nom_zone')?.invalid && registrationForm.get('nom_zone')?.touched" class="error">
+                    Le nom de la zone est requis.
+                </div>
+            </div>
+
+            <!-- Champ Localité -->
+            <div class="form-group">
+                <label for="localite">Localité</label>
+                <input type="text" id="localite" formControlName="localite" class="form-control" />
+                <div *ngIf="registrationForm.get('localite')?.invalid && registrationForm.get('localite')?.touched" class="error">
+                    La localité est requise.
+                </div>
+            </div>
+
+            <!-- Bouton S'inscrire -->
+            <button type="submit" class="btn btn-primary" [disabled]="isSubmitting || registrationForm.invalid">
+                <span *ngIf="isSubmitting">Inscription en cours...</span>
+                <span *ngIf="!isSubmitting">S'inscrire</span>
+            </button>
+
+        </form>
+    </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<!-- </body>
+</html> -->
 
 
 
@@ -121,7 +129,7 @@ document.getElementById('sidebarToggle').addEventListener('click', function() {
 document.addEventListener('click', function(event) {
     const sidebar = document.getElementById('sidebar');
     const sidebarToggle = document.getElementById('sidebarToggle');
-    
+
     if (window.innerWidth <= 768) {
         if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
             sidebar.classList.remove('active');
@@ -129,17 +137,6 @@ document.addEventListener('click', function(event) {
     }
 });
 </script>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
 
 
 

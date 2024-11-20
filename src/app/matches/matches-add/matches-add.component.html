@@ -1,0 +1,35 @@
+<div class="container">
+  <h2>Ajouter un match</h2>
+  <form [formGroup]="matchForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="competition_id">Compétition</label>
+      <input formControlName="competition_id" id="competition_id" class="form-control" type="number" />
+    </div>
+
+    <div class="form-group">
+      <label for="equipe1_id">Équipe 1</label>
+      <input formControlName="equipe1_id" id="equipe1_id" class="form-control" type="number" />
+    </div>
+
+    <div class="form-group">
+      <label for="equipe2_id">Équipe 2</label>
+      <input formControlName="equipe2_id" id="equipe2_id" class="form-control" type="number" />
+    </div>
+
+    <div class="form-group">
+      <label for="date_matche">Date du match</label>
+      <input formControlName="date_matche" id="date_matche" class="form-control" type="date" />
+    </div>
+
+    <div class="form-group">
+      <label for="statut">Statut</label>
+      <select formControlName="statut" id="statut" class="form-control">
+        <option value="en_attente">En attente</option>
+        <option value="termine">Terminé</option>
+        <option value="annule">Annulé</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="matchForm.invalid">Ajouter</button>
+  </form>
+</div>

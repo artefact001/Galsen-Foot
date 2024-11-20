@@ -26,7 +26,10 @@ import { CompetitionDetailsComponent } from './Component/Competition/competition
 import { ZoneEquipeComponent } from './Component/zone-equipe-component/zone-equipe-component.component'
 import { ZoneGuard } from './Guard/zone-guard.guard'
 import { AdminGuard } from './Guard/admin-guard.guard'
-import { TirageslistComponent } from './Component/tirage/tirages-list.component/tirages-list.component'
+import { TiragesListComponent } from './Component/tirage/tirages-list.component/tirages-list.component'
+import { MatchesListComponent } from './matches/matches-list/matches-list.component'
+import { MatchesAddComponent } from './matches/matches-add/matches-add.component'
+// import { TirageslistComponent } from './Component/tirage/tirages-list.component/tirages-list.component'
 // import { CompetitionDetailsComponent } from './Component/Competition/competition-details/competition-details.component'
 // import { MatcheListComponent } from './components/matche-list/matche-list.component'
 
@@ -59,12 +62,14 @@ export const routes: Routes = [
 
   {path: 'zones/:id', component: ZoneDetailsComponent },  // Route to view zone details
 
-  // { path: 'matches', component: MatcheListComponent },
+  { path: 'matches', component: MatchesListComponent },
+    { path: 'matches', component: MatchesAddComponent },
+
   // { path: 'tirage', component: TiragesListComponent },
 
-  { path: 'tirages', component: TirageslistComponent },
+  { path: 'tirages', component: TiragesListComponent },
   // { path: 'tirages', component: TiragesListComponent },
-  { path: 'tirages/lancer', component: TirageslistComponent  },
+  { path: 'tirages/lancer', component: TiragesListComponent  },
   { path: '', redirectTo: '/acceuil', pathMatch: 'full' },
   { path: 'acceuil', component: AcceuilComponent }, // Ensure this path and component are correct
   { path: 'competitions',component: CompetitionsListComponent  },

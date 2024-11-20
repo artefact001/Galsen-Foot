@@ -11,7 +11,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './zones-list.component.css'
 })
 export class ZonesListComponent implements OnInit {
+deleteEquipe(arg0: any) {
+throw new Error('Method not implemented.');
+}
+editEquipe(_t17: any) {
+throw new Error('Method not implemented.');
+}
+viewEquipeDetails(arg0: any) {
+throw new Error('Method not implemented.');
+}
   zones: any[] = [];
+equipes: any;
 
   constructor(private zoneService: ZoneService) {}
 

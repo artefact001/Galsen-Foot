@@ -1,159 +1,78 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Responsive</title>
+    <title>Tirage au Sort</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
-</head>
-<body>
 
+</head>
+<body> -->
 <div class="d-flex">
     <!-- Sidebar -->
-    <div id="sidebar" class="bg-dark text-white" style="width: 250px;">
-        <div class="p-3">
-            <h3 class="text-white">Galsen Foot</h3>
-        </div>
-        <div class="mt-3">
-            <a href="#" class="sidebar-link">
-                <i class="fas fa-home"></i>
-                Accueil
-            </a>
-            <a href="#" class="sidebar-link">
-                <i class="fas fa-chart-bar"></i>
-                Statistiques
-            </a>
-            <a href="/users" class="sidebar-link">
-                <i class="fas fa-users"></i>
-                Utilisateurs
-            </a>
-            <a href="#" class="sidebar-link">
-                <i class="fas fa-cog"></i>
-                Paramètres
-            </a>
-        </div>
+    <div id="sidebar" class="bg-dark text-white p-3">
+        <h3>Galsen Foot</h3>
+        <nav class="mt-3">
+            <a href="#" class="sidebar-link"><i class="fas fa-home"></i> Accueil</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-chart-bar"></i> Statistiques</a>
+            <a href="/users" class="sidebar-link"><i class="fas fa-users"></i> Utilisateurs</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-cog"></i> Paramètres</a>
+        </nav>
     </div>
 
     <!-- Contenu principal -->
-    
- <div class="container mt-4">
-      <h1 class="text-center mb-4">Tirage au Sort</h1>
+   <div class="container mt-4">
+    <h1 class="text-center mb-4">Tirage au Sort</h1>
 
-      <!-- Formulaire de lancement de tirage -->
-      <form [formGroup]="tirageForm" (ngSubmit)="onSubmit()">
-        <div>
-          <label for="phase">Phase :</label>
-          <input id="phase" formControlName="phase" type="text" />
-          <div *ngIf="tirageForm.get('phase')?.invalid && tirageForm.get('phase')?.touched" class="text-danger">
-            La phase est obligatoire.
-          </div>
-        </div>
-    
-        <div>
-          <label for="competition_id">ID de la compétition :</label>
-          <input id="competition_id" formControlName="competition_id" type="number" />
-          <div *ngIf="tirageForm.get('competition_id')?.invalid && tirageForm.get('competition_id')?.touched" class="text-danger">
-            L'ID de la compétition est obligatoire.
-          </div>
-        </div>
-    
-        <div>
-          <label for="zone_id">ID de la zone :</label>
-          <input id="zone_id" formControlName="zone_id" type="number" />
-          <div *ngIf="tirageForm.get('zone_id')?.invalid && tirageForm.get('zone_id')?.touched" class="text-danger">
-            L'ID de la zone est obligatoire.
-          </div>
-        </div>
-    
-        <div>
-          <label for="nombre_poules">Nombre de poules :</label>
-          <input id="nombre_poules" formControlName="nombre_poules" type="number" />
-          <div *ngIf="tirageForm.get('nombre_poules')?.invalid && tirageForm.get('nombre_poules')?.touched" class="text-danger">
-            Le nombre de poules doit être supérieur à 0.
-          </div>
-        </div>
-    
-        <button type="submit"  class="btn btn-primary mt-3">Lancer le Tirage</button>
-      </form>
-      <div class="tirage-list-container">
-        <h2>Liste des Tirages</h2>
-      
-        <!-- Chargement en cours -->
-        <div *ngIf="loading" class="loading">Chargement des tirages...</div>
-      
-        <!-- Message d'erreur -->
-        <div *ngIf="error" class="error-message">{{ error }}</div>
-      
-        <!-- Liste des tirages -->
-        <div *ngIf="tirages.length > 0">
-          <div *ngFor="let tirage of tirages" class="tirage-card">
-            <h3>{{ tirage.phase }}</h3>
-            <p><strong>ID de la compétition :</strong> {{ tirage.competition_id }}</p>
-            <!-- <p><strong>ID de la zone :</strong> {{ tirage.zone_id }}</p> -->
-            <p><strong>Nombre de poules :</strong> {{ tirage.nombre_poules }}</p>
-          </div>
-        </div>
-      
-        <!-- Message si aucun tirage -->
-        <div *ngIf="!loading && tirages.length === 0">Aucun tirage disponible pour le moment.</div>
-      </div>
-      <!-- Affichage des poules -->
-      <div *ngIf="poules.length > 0">
-        <h2 class="text-center">Résultats du Tirage</h2>
-        <div class="row">
-          <div *ngFor="let poule of poules" class="col-md-4 mb-4">
-            <div class="card">
-              <div class="card-header bg-primary text-white">{{ poule.nom }}</div>
-              <div class="card-body">
-                <ul class="list-group">
-                  <li *ngFor="let equipe of poule.equipes" class="list-group-item">
-                    Équipe {{ equipe }}
-                  </li>
-                </ul>
-              </div>
+    <!-- Formulaire de lancement de tirage -->
+    <form [formGroup]="tirageForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="phase" class="form-label">Phase :</label>
+            <input id="phase" class="form-control" formControlName="phase" type="text" />
+            <div *ngIf="tirageForm.get('phase')?.invalid && tirageForm.get('phase')?.touched" class="text-danger">
+                La phase est obligatoire.
             </div>
-          </div>
         </div>
-      </div>
-    </div>
 
+        <div class="mb-3">
+            <label for="competition_nom" class="form-label">Compétition :</label>
+            <select id="competition_nom" class="form-control" formControlName="competition_nom">
+                <option *ngFor="let competition of competitions" [value]="competition.nom">
+                    {{ competition.nom }}
+                </option>
+            </select>
+            <div *ngIf="tirageForm.get('competition_id')?.invalid && tirageForm.get('competition_id')?.touched" class="text-danger">
+                La compétition est obligatoire.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="zone_nom" class="form-label">Zone :</label>
+            <select id="zone_nom" class="form-control" formControlName="zone_nom">
+                <option *ngFor="let zone of zones" [value]="zone.nom">
+                    {{ zone.nom }}
+                </option>
+            </select>
+            <div *ngIf="tirageForm.get('zone_id')?.invalid && tirageForm.get('zone_id')?.touched" class="text-danger">
+                La zone est obligatoire.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="nombre_poules" class="form-label">Nombre de poules :</label>
+            <input id="nombre_poules" class="form-control" formControlName="nombre_poules" type="number" />
+            <div *ngIf="tirageForm.get('nombre_poules')?.invalid && tirageForm.get('nombre_poules')?.touched" class="text-danger">
+                Le nombre de poules doit être supérieur à 0.
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Lancer le Tirage</button>
+    </form>
+</div>
 
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-<script>
-document.getElementById('sidebarToggle').addEventListener('click', function() {
-    document.getElementById('sidebar').classList.toggle('active');
-});
-
-// Fermer la sidebar en cliquant en dehors sur mobile
-document.addEventListener('click', function(event) {
-    const sidebar = document.getElementById('sidebar');
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    
-    if (window.innerWidth <= 768) {
-        if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
-            sidebar.classList.remove('active');
-        }
-    }
-});
-</script>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- </body>
+</html> -->
